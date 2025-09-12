@@ -1,21 +1,54 @@
 # 🛰️ Cubesat-ADCS
-Repository documents the development of a closed-loop simulation for a CubeSat-scale Attitude Determination &amp; Control System (ADCS) using Simulink. The project focuses on modeling realistic perturbed dynamics and implementing Kalman filter-based sensor fusion for attitude estimation. Initial control strategies include PID control, then LQR later on
+This repository documents the development of a closed-loop Attitude Determination and Control System (ADCS) simulation for a CubeSat-scale spacecraft using MATLAB and Simulink.
 
-## Goals
-- ** Simulate realistic perturbed dynamics for cubesat in Low Earth orbit
-- ** Prepare for future hardware deployment
+The simulation models realistic 6-DOF perturbed dynamics in Low Earth Orbit (LEO) and implements sensor fusion (Kalman filtering) for attitude estimation. Initial control strategies use PID control, with plans to explore optimal control approaches (LQR, etc.) later.
 
-## Tools
-- ** Simulink
-- ** MATLAB
+---
 
-## Current Status
-- ** Early research phase in the aspect of the perturbed dynamics of a cubesat in LEO
-- ** Early research phase in estimation methods (Kalman filter), in how to employ in closed loop simulink simulation
-- ** Early research phase in control algorithm development for cubesat, PID implementation aiming to adjust the attitude
+## 🚀 Project Goals
 
+- Simulate realistic 6-DOF orbital and attitude dynamics for a CubeSat in LEO  
+- Design and implement attitude estimation using Kalman filtering techniques  
+- Develop and tune control algorithms (PID initially, then LQR)  
+- Prepare the simulation for eventual Hardware-in-the-Loop (HIL) testing via embedded code generation (MATLAB Coder)
 
-## Future Goals
-- ** Employ more advanced estimation filters such as the extended kalman filter to handle more aggresive non-linear dynamics
-- ** Look into optimal control strategies, starting first with LQR
-- ** Hardware deployment, use MATLAB's embedded coder to obtain embedded C code to deploy on microcontroller for Hardware in the Loop simulation (HIL)
+---
+
+## 🧰 Tools & Technologies
+
+- MATLAB  
+- Simulink  
+- MATLAB Coder (planned for future embedded code generation)
+
+---
+
+## 📌 Current Status
+
+- Researching spacecraft rotational dynamics (quaternions, Euler angles) and LEO perturbations  
+- Exploring Kalman filter design and its integration into a closed-loop Simulink simulation  
+- Starting PID controller development to stabilize spacecraft attitude  
+- Repository structure and Simulink model initialization underway
+
+---
+
+## 🔭 Planned Milestones
+
+- Implement extended Kalman filter (EKF) for improved non-linear estimation  
+- Explore LQR control and other optimal strategies  
+- Integrate realistic actuator models (reaction wheels, magnetorquers)  
+- Use MATLAB Coder to generate embedded C code for deployment on a microcontroller  
+- Conduct Hardware-in-the-Loop (HIL) testing using a CubeSat testbed
+
+---
+
+## 📂 Repo Structure (in progress)
+
+```plaintext
+Cubesat-ADCS/
+├── README.md
+├── models/                # Simulink files (dynamics, control, estimation)
+├── scripts/               # MATLAB utility scripts (e.g. quaternions, plotting)
+├── estimation/            # Kalman filter models
+├── control/               # PID, LQR, and other control implementations
+├── docs/                  # Notes, derivations, background research
+└── references/            # Technical papers and resource links
